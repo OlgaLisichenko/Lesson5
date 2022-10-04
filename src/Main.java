@@ -8,7 +8,7 @@ public class Main {
     public static void main(String[] args) {
         String message = "\nEnter the task number from 1 to 4. 0 - closing the program.";
         System.out.println(message);
-        scan(message);
+        isScannerHaveInt(message);
         int taskNumber = scanner.nextInt();
 
         while (taskNumber != 0) {
@@ -19,6 +19,7 @@ public class Main {
                 case 4 -> task4();
             }
             System.out.println(message);
+            isScannerHaveInt(message);
             taskNumber = scanner.nextInt();
         }
         scanner.close();
@@ -31,7 +32,7 @@ public class Main {
         System.out.println("--------------- Task 1 ---------------\n");
         String message = "Enter any integer";
         System.out.println(message);
-        scan(message);
+        isScannerHaveInt(message);
         int number = scanner.nextInt();
         int[][][] array3 = new int[3][2][4];
         int counter = 1;
@@ -110,7 +111,7 @@ public class Main {
         System.out.println("Sorted   array: " + Arrays.deepToString(array));
     }
 
-    public static void scan(String message) {
+    public static void isScannerHaveInt(String message) {
         while (!scanner.hasNextInt()) {
             System.out.println(message);
             scanner.next();
